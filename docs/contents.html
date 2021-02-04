@@ -811,10 +811,12 @@ value fields.</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>name</strong> (<em>str</em>) &#8211; </li>
-<li><strong>iban</strong> (<em>str</em>) &#8211; </li>
+<li><strong>iban</strong> (<em>str</em>) &#8211; Should be None if using bacs</li>
 <li><strong>address</strong> (<em>dict</em>) &#8211; A dictionary containing street, city,
-postal_code, and country fields.</li>
-<li><strong>bacs</strong> (<em>dict</em>) &#8211; A dictionary containing account and sort_code</li>
+postal_code, and country fields.
+Best practice is to not use it.</li>
+<li><strong>bacs</strong> (<em>dict</em>) &#8211; A dictionary containing account and sort_code
+Should be None if using iban.</li>
 </ul>
 </td>
 </tr>
@@ -1084,7 +1086,7 @@ call /transactions/get.</p>
 <dl class="exception">
 <dt id="plaid.errors.BaseError">
 <em class="property">exception </em><code class="descclassname">plaid.errors.</code><code class="descname">BaseError</code><span class="sig-paren">(</span><em>message</em>, <em>type</em>, <em>code</em>, <em>display_message</em><span class="sig-paren">)</span><a class="headerlink" href="#plaid.errors.BaseError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
 <p>A base error class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
